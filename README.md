@@ -16,14 +16,13 @@
 - Sponsor carousel and event menu image gallery
 - Clean and bold layout for visibility from distance
 
-## 🧱 Tech Stack
+## 📦 Main Dependencies
 
-- **React 18**
-- **Tailwind CSS**
-- **PrimeReact**
-- **Framer Motion**
-- **TypeScript**
-- **Vite**
+- react: 19.1.0
+- react-dom: 19.1.0
+- react-router-dom: 6.30.0
+- primereact: 10.9.5
+- framer-motion: 11.18.2
 
 ## 🧑‍💻 Development
 
