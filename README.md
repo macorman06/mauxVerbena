@@ -1,4 +1,4 @@
-# verbenaMaux 🎉
+# Verbena María Auxiliadora Web 🎉
 
 **Verbena Maux** is a full-screen, responsive, single-page web application built with **React**, **TailwindCSS**, and **PrimeReact**, designed to manage a real-world **bingo game** for live events. It is optimized for large displays (e.g. projectors or TVs) and allows easy interaction with a physical bingo draw.
 
