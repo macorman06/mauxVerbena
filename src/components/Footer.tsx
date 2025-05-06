@@ -3,7 +3,7 @@ import { Carousel } from 'primereact/carousel';
 export default function Footer() {
   const sponsors = Array.from({ length: 10 }, (_, i) => ({
     id: i + 1,
-    image: `/assets/patrocinadores/patrocinador${i + 1}.png`,
+    image: `/assets/patrocinadores/patrocinador${i + 1}.svg`,
   }));
 
   return (
