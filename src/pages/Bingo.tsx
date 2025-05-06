@@ -80,12 +80,12 @@ export default function Bingo() {
         }
       }
       grid.push(
-        <div key={row} className="flex gap-2 justify-center">
+        <div key={row} className="flex gap-4 justify-center">
           {rowNumbers}
         </div>
       );
     }
-    return <div className="flex flex-col gap-2">{grid}</div>;
+    return <div className="flex flex-col gap-4">{grid}</div>;
   };
 
   const renderCircle = (index: number) => (
@@ -105,17 +105,14 @@ export default function Bingo() {
   );
 
   return (
-    <div className="w-screen h-auto flex flex-col p-2 md:p-4">
-      {/* Cartón */}
+    <div className="w-screen h-auto flex flex-col p-2 md:p-8">
       <div className="text-center text-sm md:text-base font-semibold mb-2">
         Cartón: 1 €
       </div>
 
-      <div className="flex-1 flex flex-row items-center justify-center gap-4">
-        {/* Columna izquierda (números 1–50) */}
+      <div className="flex-1 flex flex-row items-center justify-center gap-16">
         {renderColumn(0, 5)}
 
-        {/* Columna central */}
         <div className="flex flex-col items-center justify-center gap-3 px-2">
           <h2 className="text-xl md:text-2xl font-bold">
             BINGO {currentSession}
