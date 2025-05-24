@@ -205,11 +205,6 @@ export default function Bingo() {
             </motion.div>
 
             <div className="w-32 md:w-48 xl:w-64">
-              <img
-                  src={`/assets/premios/bingo${currentSession}_bingo.png`}
-                  alt={`Premio Bingo ${currentSession}`}
-                  className="w-full rounded-lg"
-              />
             </div>
 
             <div className="flex gap-2 mt-2">
