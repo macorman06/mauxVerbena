@@ -162,7 +162,7 @@ export default function Bingo() {
           Cartón: 1 €
         </div>
 
-        <div className="flex-1 flex flex-row items-center justify-center gap-16">
+        <div className="flex flex-col md:flex-row items-center justify-center w-full h-full gap-4 md:gap-8">
           {renderColumn(0, 5)}
 
           <div className="flex flex-col items-center justify-center gap-3 px-2">

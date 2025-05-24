@@ -4,10 +4,8 @@ import { motion } from 'framer-motion';
 
 export default function Home() {
   const sections = [
-    { title: 'Menú', path: '/menu', color: 'bg-secondary' },
     { title: 'Bingo', path: '/bingo', color: 'bg-secondary' },
     { title: 'Patrocinadores', path: '/patrocinadores', color: 'bg-secondary' },
-    { title: 'Rifa', path: '/rifa', color: 'bg-secondary' },
   ];
 
   return (
