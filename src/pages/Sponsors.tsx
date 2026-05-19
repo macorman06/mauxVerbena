@@ -1,104 +1,77 @@
-import EmblaCarousel from '../components/EmblaCarousel';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const OPTIONS = { loop: true };
-
-// Imágenes reales desde la carpeta `public/assets/patrocinadores/`
-const SLIDES = [
-    '/assets/patrocinadores/patrocinador1.svg',
-    '/assets/patrocinadores/patrocinador2.svg',
-    '/assets/patrocinadores/patrocinador3.svg',
-    '/assets/patrocinadores/patrocinador4.svg',
-    '/assets/patrocinadores/patrocinador5.svg',
-    '/assets/patrocinadores/patrocinador6.svg',
-    '/assets/patrocinadores/patrocinador7.svg',
-    '/assets/patrocinadores/patrocinador8.svg',
-    '/assets/patrocinadores/patrocinador9.svg',
-    '/assets/patrocinadores/patrocinador10.svg',
-    '/assets/patrocinadores/patrocinador11.svg',
-    '/assets/patrocinadores/patrocinador1.svg',
-    '/assets/patrocinadores/patrocinador2.svg',
-    '/assets/patrocinadores/patrocinador3.svg',
-    '/assets/patrocinadores/patrocinador4.svg',
-    '/assets/patrocinadores/patrocinador5.svg',
-    '/assets/patrocinadores/patrocinador6.svg',
-    '/assets/patrocinadores/patrocinador7.svg',
-    '/assets/patrocinadores/patrocinador8.svg',
-    '/assets/patrocinadores/patrocinador9.svg',
-    '/assets/patrocinadores/patrocinador10.svg',
-    '/assets/patrocinadores/patrocinador11.svg',
-    '/assets/patrocinadores/patrocinador1.svg',
-    '/assets/patrocinadores/patrocinador2.svg',
-    '/assets/patrocinadores/patrocinador3.svg',
-    '/assets/patrocinadores/patrocinador4.svg',
-    '/assets/patrocinadores/patrocinador5.svg',
-    '/assets/patrocinadores/patrocinador6.svg',
-    '/assets/patrocinadores/patrocinador7.svg',
-    '/assets/patrocinadores/patrocinador8.svg',
-    '/assets/patrocinadores/patrocinador9.svg',
-    '/assets/patrocinadores/patrocinador10.svg',
-    '/assets/patrocinadores/patrocinador11.svg',
-    '/assets/patrocinadores/patrocinador1.svg',
-    '/assets/patrocinadores/patrocinador2.svg',
-    '/assets/patrocinadores/patrocinador3.svg',
-    '/assets/patrocinadores/patrocinador4.svg',
-    '/assets/patrocinadores/patrocinador5.svg',
-    '/assets/patrocinadores/patrocinador6.svg',
-    '/assets/patrocinadores/patrocinador7.svg',
-    '/assets/patrocinadores/patrocinador8.svg',
-    '/assets/patrocinadores/patrocinador9.svg',
-    '/assets/patrocinadores/patrocinador10.svg',
-    '/assets/patrocinadores/patrocinador11.svg',
-    '/assets/patrocinadores/patrocinador1.svg',
-    '/assets/patrocinadores/patrocinador2.svg',
-    '/assets/patrocinadores/patrocinador3.svg',
-    '/assets/patrocinadores/patrocinador4.svg',
-    '/assets/patrocinadores/patrocinador5.svg',
-    '/assets/patrocinadores/patrocinador6.svg',
-    '/assets/patrocinadores/patrocinador7.svg',
-    '/assets/patrocinadores/patrocinador8.svg',
-    '/assets/patrocinadores/patrocinador9.svg',
-    '/assets/patrocinadores/patrocinador10.svg',
-    '/assets/patrocinadores/patrocinador11.svg',
-    '/assets/patrocinadores/patrocinador1.svg',
-    '/assets/patrocinadores/patrocinador2.svg',
-    '/assets/patrocinadores/patrocinador3.svg',
-    '/assets/patrocinadores/patrocinador4.svg',
-    '/assets/patrocinadores/patrocinador5.svg',
-    '/assets/patrocinadores/patrocinador6.svg',
-    '/assets/patrocinadores/patrocinador7.svg',
-    '/assets/patrocinadores/patrocinador8.svg',
-    '/assets/patrocinadores/patrocinador9.svg',
-    '/assets/patrocinadores/patrocinador10.svg',
-    '/assets/patrocinadores/patrocinador11.svg',
-    '/assets/patrocinadores/patrocinador1.svg',
-    '/assets/patrocinadores/patrocinador2.svg',
-    '/assets/patrocinadores/patrocinador3.svg',
-    '/assets/patrocinadores/patrocinador4.svg',
-    '/assets/patrocinadores/patrocinador5.svg',
-    '/assets/patrocinadores/patrocinador6.svg',
-    '/assets/patrocinadores/patrocinador7.svg',
-    '/assets/patrocinadores/patrocinador8.svg',
-    '/assets/patrocinadores/patrocinador9.svg',
-    '/assets/patrocinadores/patrocinador10.svg',
-    '/assets/patrocinadores/patrocinador11.svg',
-    '/assets/patrocinadores/patrocinador1.svg',
-    '/assets/patrocinadores/patrocinador2.svg',
-    '/assets/patrocinadores/patrocinador3.svg',
-    '/assets/patrocinadores/patrocinador4.svg',
-    '/assets/patrocinadores/patrocinador5.svg',
-    '/assets/patrocinadores/patrocinador6.svg',
-    '/assets/patrocinadores/patrocinador7.svg',
-    '/assets/patrocinadores/patrocinador8.svg',
-    '/assets/patrocinadores/patrocinador9.svg',
-    '/assets/patrocinadores/patrocinador10.svg',
-    '/assets/patrocinadores/patrocinador11.svg',
-];
+const SLIDES = Array.from({ length: 11 }, (_, i) =>
+    `/mauxVerbena/assets/patrocinadores/patrocinador${i + 1}.svg`
+);
 
 export default function Sponsors() {
+    const [current, setCurrent] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrent(prev => (prev + 1) % SLIDES.length);
+        }, 10000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const goTo = (i: number) => setCurrent(i);
+    const prev = () => setCurrent(prev => (prev - 1 + SLIDES.length) % SLIDES.length);
+    const next = () => setCurrent(prev => (prev + 1) % SLIDES.length);
+
     return (
-        <div className="w-screen h-auto flex flex-col justify-center items-center p-8">
-            <h1 className="text-4xl font-bold mb-8 text-center">Patrocinadores</h1>
-            <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+        <div className="flex flex-col" style={{ height: 'calc(100vh - 8rem)' }}>
+            {/* Imagen a pantalla completa */}
+            <div className="relative flex-1 overflow-hidden bg-white">
+                <AnimatePresence mode="wait">
+                    <motion.img
+                        key={current}
+                        src={SLIDES[current]}
+                        alt={`Patrocinador ${current + 1}`}
+                        initial={{ opacity: 0, scale: 0.97 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.02 }}
+                        transition={{ duration: 0.4, ease: 'easeInOut' }}
+                        className="absolute inset-0 w-full h-full object-contain p-8"
+                    />
+                </AnimatePresence>
+
+                {/* Flechas */}
+                <button
+                    onClick={prev}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/80 border border-border shadow-card flex items-center justify-center text-dark hover:bg-white transition-colors z-10"
+                    aria-label="Anterior"
+                >
+                    ‹
+                </button>
+                <button
+                    onClick={next}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/80 border border-border shadow-card flex items-center justify-center text-dark hover:bg-white transition-colors z-10"
+                    aria-label="Siguiente"
+                >
+                    ›
+                </button>
+
+                {/* Contador */}
+                <div className="absolute top-3 right-4 text-xs text-muted bg-white/80 px-2 py-1 rounded-full">
+                    {current + 1} / {SLIDES.length}
+                </div>
+            </div>
+
+            {/* Dots */}
+            <div className="flex justify-center gap-2 py-3 bg-light border-t border-border">
+                {SLIDES.map((_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => goTo(i)}
+                        className={`rounded-full transition-all ${i === current
+                                ? 'w-5 h-2 bg-accent'
+                                : 'w-2 h-2 bg-border hover:bg-muted'
+                            }`}
+                        aria-label={`Ir a patrocinador ${i + 1}`}
+                    />
+                ))}
+            </div>
         </div>
     );
 }

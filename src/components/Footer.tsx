@@ -1,30 +1,8 @@
-import { Carousel } from 'primereact/carousel';
-
 export default function Footer() {
-  const sponsors = Array.from({ length: 11 }, (_, i) => ({
-    id: i + 1,
-    image: `/assets/patrocinadores/patrocinador${i + 1}.svg`,
-  }));
-
   return (
-    <footer className="bg-light p-4">
-      <div className="container mx-auto">
-        <Carousel
-          value={sponsors}
-          numVisible={11}
-          numScroll={1}
-          className="border-none"
-          showNavigators={false}
-          showIndicators={false}
-          itemTemplate={(sponsor) => (
-            <img
-              key={sponsor.id}
-              src={sponsor.image}
-              alt={`Patrocinador ${sponsor.id}`}
-              className="h-16 object-contain mx-2"
-            />
-          )}
-        />
+    <footer className="bg-white border-t border-border mt-auto py-4">
+      <div className="max-w-7xl mx-auto px-4 text-center text-sm text-muted">
+        Verbena MAUX © {new Date().getFullYear()} · Centro Juvenil Juveliber · Salesianos Parla
       </div>
     </footer>
   );

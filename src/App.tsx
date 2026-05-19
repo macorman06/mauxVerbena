@@ -8,7 +8,7 @@ import Raffle from './pages/Raffle';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/mauxVerbena">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
