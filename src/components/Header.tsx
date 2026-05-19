@@ -17,6 +17,21 @@ export default function Header() {
             <Link to="/" className="text-xl font-black text-dark tracking-tight hover:text-accent transition-colors">
               VERBENA MAUX
             </Link>
+            <nav className="flex gap-1">
+              {navItems.map(item => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                    location.pathname === item.path
+                      ? 'bg-accent text-white'
+                      : 'text-muted hover:text-dark hover:bg-gray-100'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           </div>
           <img src="/mauxVerbena/assets/logos/salesianos_parla.png" alt="Salesianos Parla" className="h-10 w-auto object-contain" />
         </div>
