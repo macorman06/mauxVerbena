@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const SLIDES = Array.from({ length: 11 }, (_, i) =>
+const SLIDES = Array.from({ length: 13 }, (_, i) =>
     `/mauxVerbena/assets/patrocinadores/patrocinador${i + 1}.svg`
 );
 
