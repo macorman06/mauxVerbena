@@ -11,7 +11,6 @@ const SLIDES = [
     '/mauxVerbena/assets/patrocinadores/patrocinador8.svg',
     '/mauxVerbena/assets/patrocinadores/patrocinador10.svg',
     '/mauxVerbena/assets/patrocinadores/patrocinador11.svg',
-    '/mauxVerbena/assets/patrocinadores/patrocinador12.svg',
     '/mauxVerbena/assets/patrocinadores/patrocinador13.svg',
 ];
 
@@ -31,7 +30,6 @@ export default function Sponsors() {
 
     return (
         <div className="flex flex-col" style={{ height: 'calc(100vh - 8rem)', backgroundColor: '#e5e7eb' }}>
-            {/* Imagen a pantalla completa */}
             <div className="relative flex-1 overflow-hidden" style={{ backgroundColor: '#e5e7eb' }}>
                 <AnimatePresence mode="wait">
                     <motion.img
@@ -46,7 +44,6 @@ export default function Sponsors() {
                     />
                 </AnimatePresence>
 
-                {/* Flechas */}
                 <button
                     onClick={prev}
                     className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/80 border border-border shadow-card flex items-center justify-center text-dark hover:bg-white transition-colors z-10"
@@ -62,13 +59,11 @@ export default function Sponsors() {
                     ›
                 </button>
 
-                {/* Contador */}
                 <div className="absolute top-3 right-4 text-xs text-muted bg-white/80 px-2 py-1 rounded-full">
                     {current + 1} / {SLIDES.length}
                 </div>
             </div>
 
-            {/* Dots */}
             <div className="flex justify-center gap-2 py-3 bg-light border-t border-border">
                 {SLIDES.map((_, i) => (
                     <button
