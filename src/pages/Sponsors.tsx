@@ -30,9 +30,9 @@ export default function Sponsors() {
     const next = () => setCurrent(prev => (prev + 1) % SLIDES.length);
 
     return (
-        <div className="flex flex-col" style={{ height: 'calc(100vh - 8rem)' }}>
+        <div className="flex flex-col" style={{ height: 'calc(100vh - 8rem)', backgroundColor: '#e5e7eb' }}>
             {/* Imagen a pantalla completa */}
-            <div className="relative flex-1 overflow-hidden bg-white">
+            <div className="relative flex-1 overflow-hidden" style={{ backgroundColor: '#e5e7eb' }}>
                 <AnimatePresence mode="wait">
                     <motion.img
                         key={current}
