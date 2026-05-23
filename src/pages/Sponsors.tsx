@@ -1,9 +1,19 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const SLIDES = Array.from({ length: 13 }, (_, i) =>
-    `/mauxVerbena/assets/patrocinadores/patrocinador${i + 1}.svg`
-);
+const SLIDES = [
+    '/mauxVerbena/assets/patrocinadores/patrocinador1.svg',
+    '/mauxVerbena/assets/patrocinadores/patrocinador2.svg',
+    '/mauxVerbena/assets/patrocinadores/patrocinado2.svg',
+    '/mauxVerbena/assets/patrocinadores/patrocinador3.svg',
+    '/mauxVerbena/assets/patrocinadores/patrocinador6.svg',
+    '/mauxVerbena/assets/patrocinadores/patrocinador7.svg',
+    '/mauxVerbena/assets/patrocinadores/patrocinador8.svg',
+    '/mauxVerbena/assets/patrocinadores/patrocinador10.svg',
+    '/mauxVerbena/assets/patrocinadores/patrocinador11.svg',
+    '/mauxVerbena/assets/patrocinadores/patrocinador12.svg',
+    '/mauxVerbena/assets/patrocinadores/patrocinador13.svg',
+];
 
 export default function Sponsors() {
     const [current, setCurrent] = useState(0);
